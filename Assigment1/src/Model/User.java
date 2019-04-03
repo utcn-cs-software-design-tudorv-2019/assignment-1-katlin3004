@@ -11,7 +11,6 @@ public class User {
 	private int cnp;
 	private int idcard;
 	private String adress;
-	private Date birthday;
 	private String role;
 
 	public int getIduser() {
@@ -76,14 +75,6 @@ public class User {
 
 	public void setAdress(String adress) {
 		this.adress = adress;
-	}
-
-	public Date getBirthday() {
-		return birthday;
-	}
-
-	public void setBirthday(Date birthday) {
-		this.birthday = birthday;
 	}
 
 	public String getRole() {

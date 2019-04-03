@@ -23,8 +23,8 @@ public class DataAccess {
 
 	public User getUser(String username, String password) throws SQLException {
 		User user = new User();
-		String query = "SELECT * FROM user WHERE username ='" + username + "' and password ='" + password + "'" ;
-		Statement  st = connection.createStatement();
+		String query = "SELECT * FROM user WHERE username ='" + username + "' and password ='" + password + "'";
+		Statement st = connection.createStatement();
 		ResultSet rs = st.executeQuery(query);
 
 		while (rs.next()) {
@@ -34,4 +34,36 @@ public class DataAccess {
 		return user;
 	}
 
+	public void addUser(User user) {
+		String query = "INSERT INTO user(name,cnp,idcard,adress) VALUES('" + user.getName() + "'," + user.getCnp() + ","
+				+ user.getIdcard() + ",'" + user.getAdress() + "')";
+		System.out.println(query);
+		Statement st;
+		try {
+			st = connection.createStatement();
+			st.executeUpdate(query);
+			st.close();
+
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
+	public void updateUser(User user) {
+		String query = "UPDATE user set name='" + user.getName() + "',cnp=" + user.getCnp()
+		+ ", idcard='" + user.getIdcard() + "', adress='" + user.getAdress()
+		+ "' WHERE iduser=" + user.getIduser();
+		System.out.println(query);
+		Statement st;
+		try {
+			st = connection.createStatement();
+			st.executeUpdate(query);
+			st.close();
+
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
 }

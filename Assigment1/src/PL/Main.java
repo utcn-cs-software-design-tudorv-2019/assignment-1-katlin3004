@@ -34,7 +34,6 @@ public class Main extends Application {
 
 	@Override
 	public void start(Stage primaryStage) throws Exception {
-
 		usernameLabel = new Label("Username");
 		passwordLabel = new Label("Password");
 		usernameTextField = new TextField();

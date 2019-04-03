@@ -19,4 +19,14 @@ public class UserOperations {
 			return null;
 		}
 	}
+	
+	public void addUser(User user) {
+		DataAccess dataAccess = new DataAccess();
+		dataAccess.addUser(user);
+	}
+	
+	public void updateUser(User user) {
+		DataAccess dataAccess = new DataAccess();
+		dataAccess.updateUser(user);
+	}
 }
