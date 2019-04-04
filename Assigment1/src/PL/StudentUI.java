@@ -1,5 +1,7 @@
 package PL;
 
+import javax.swing.JTabbedPane;
+
 import BL.UserOperations;
 import Model.User;
 import javafx.*;
@@ -22,7 +24,6 @@ public class StudentUI {
 	private Label labelIdCard;
 	private Label labelCNP;
 	private Label labelAdress;
-	private Label labelBirthDay;
 
 	private TextField idUserTextField;
 	private TextField nameTextField;
@@ -34,9 +35,7 @@ public class StudentUI {
 	private Button updateButton;
 	private Button viewButton;
 	
-	 //TABLE VIEW AND DATA
-    private ObservableList<ObservableList> data;
-    private TableView tableview;
+	private JTabbedPane table;
 
 	public StudentUI() {
 
